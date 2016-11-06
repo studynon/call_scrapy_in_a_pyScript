@@ -6,25 +6,25 @@ from scrapy.crawler import CrawlerProcess
 import logging
 
 def create_myspider(nm, dmn, url):
-	class MySpider(Spider):
-	    # Your spider definition
-	    name = nm#"scrp"  
-	    allowed_domains = dmn#["baidu.com"]  
-	    start_urls = [  
-	        url#"http://tieba.baidu.com/"  
-	    ]  
-	  
-	    def parse(self, response):  
-	    	items = []
-	    	sel = Selector(response)
-	    	spans = sel.xpath('//span[@class="col-gray"]')
-	    	filename = response.url.split("/")[2] 
-	    	fw = open(filename, 'w')
-	    	items = spans.xpath('text()').extract()
-	    	for item in items[1:]:
-	    		fw.write('%s\n' % item.encode('utf-8'))
-	        fw.close()
-	return MySpider
+    class MySpider(Spider):
+        # Your spider definition
+        name = nm#"scrp"  
+        allowed_domains = dmn#["baidu.com"]  
+        start_urls = [  
+            url#"http://tieba.baidu.com/"  
+        ]  
+      
+        def parse(self, response):  
+            items = []
+            sel = Selector(response)
+            spans = sel.xpath('//span[@class="col-gray"]')
+            filename = response.url.split("/")[2] 
+            fw = open(filename, 'w')
+            items = spans.xpath('text()').extract()
+            for item in items[1:]:
+                fw.write('%s\n' % item.encode('utf-8'))
+            fw.close()
+    return MySpider
 
 if __name__ == "__main__":
     process = CrawlerProcess({
