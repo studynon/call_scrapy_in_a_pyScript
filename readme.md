@@ -1,6 +1,6 @@
-## 使用Scrapy库爬取网页url
-我用Scrapy这个库重新写了爬虫程序. 
-目前在网上搜索Scrapy的使用方法多数是在命令行中操作的, 把scrapy作为一个应用程序.
-我希望把所用功能写在一个py脚本中, 所以写了这个.
+## Use the Scrapy library to crawl the page url
+I re-wrote the reptile program with Scrapy library.
+Currently on the Internet search Scrapy most of the use of the command line in the operation, the scrapy as an application.
+I want to write the function used in a py script, so write this.
 
-备注: 写这个程序的过程中受到师弟写的基于bs4程序的启发. ~~后续考虑把队列和多线程的内容加进去.~~ 后来在网上搜索,发现Scrapy不支持多线程(多线程是Scrapy自己内部优化的, 只是不能手动配置, 依然可以运行多只爬虫), yield\Request\callback这些配合起来用效率还是很高的.
+Note: On the basis of the bs4 program is different. Later in the online search, found that Scrapy does not support multi-threaded (multi-threaded is Scrapy own internal optimization, but can not be manually configured, still can run more crawlers), yield \ Request \ callback these together With the efficiency is still very high.
